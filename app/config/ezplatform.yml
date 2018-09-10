@@ -14,21 +14,34 @@ ezpublish:
 
     # Siteaccess configuration, with one siteaccess per default
     siteaccess:
-        list: [site, admin]
+        list:
+          - de
+          - en
+          - site
+          - admin
         groups:
-            site_group: [site]
+            site_group: [de,en,site]
 
             # WARNING: Do not remove or rename this group.
             # It's used to distinguish common siteaccesses from admin ones.
             # In case of multisite with multiple admin panels, remember to add any additional admin siteaccess to this group.
             admin_group: [admin]
-        default_siteaccess: site
+        default_siteaccess: en
         match:
             URIElement: 1
 
     # System settings, grouped by siteaccess and/or siteaccess group
     system:
+        de:
+            languages: [ger-DE,eng-GB]
+        en:
+            languages:
+                - eng-GB
+                - eng-US
         site_group:
+            session:
+                name: eZCommerce
+                cookie_lifetime: 86400
             # Cache pool service, needs to be different per repository (database) on multi repository install.
             cache_service_name: '%cache_pool%'
             # These reflect the current installers, complete installation before you change them. For changing var_dir
@@ -38,7 +51,7 @@ ezpublish:
             # System languages. Note that by default, content, content types, and other data are in eng-GB locale,
             # so removing eng-GB from this list may lead to errors or content not being shown, unless you change
             # all eng-GB data to other locales first.
-            languages: [eng-GB]
+            #languages: [eng-GB]
             content:
                 # As we by default enable EzSystemsPlatformHttpCacheBundle which is designed to expire all affected cache
                 # on changes, and as error / redirects now have separate ttl, we easier allow ttl to be greatly increased
@@ -64,7 +77,7 @@ ezpublish:
                     service_id: '%fastly_service_id%'
                     key: '%fastly_key%'
             page_builder:
-                siteaccess_list: [site]
+                siteaccess_list: [de,en]
 
     url_alias:
         slug_converter:

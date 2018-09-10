@@ -5,6 +5,8 @@ imports:
     - { resource: env/generic.php }
     - { resource: env/platformsh.php }
     - { resource: services.yml }
+    - { resource: ecommerce.yml }
+    - { resource: ecommerce_parameters.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -64,12 +66,12 @@ framework:
     trusted_hosts: ~
     session:
         # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-        # if handler_id set to null will use default session handler from php.ini
+        # handler_id set to null will use default session handler from php.ini
         handler_id: '%ezplatform.session.handler_id%'
-        save_path: '%ezplatform.session.save_path%'
-        # Note: eZ Platform also allows session name and session cookie configuration to be per SiteAccess, by
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        # Note: eZ Publish also allows session name and session cookie configuration to be per SiteAccess, by
         #       default session name will be set to "eZSESSID{siteaccess_hash}" (unique session name per siteaccess)
-        #       Further reading on sessions: http://doc.ezplatform.com/en/latest/guide/sessions/
+        #       Further reading on sessions: http://doc.ezplatform.com/en/master/guide/sessions/
     fragments: ~
     http_method_override: true
     assets: true
@@ -78,7 +80,7 @@ framework:
 
 # Twig Configuration
 twig:
-    debug: '%kernel.debug%'
+    debug: false
     strict_variables: '%kernel.debug%'
 
 # Assetic Configuration
@@ -103,6 +105,7 @@ swiftmailer:
 
 # FOSHttpCache Configuration
 fos_http_cache:
+
     cache_control:
         rules:
             # Make sure already cacheable (fresh) responses from eZ Platform which are errors/redirect gets lower ttl (then default_ttl)

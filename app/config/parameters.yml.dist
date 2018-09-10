@@ -1,17 +1,22 @@
 # This file is a "template" of what your parameters.yml file should look like
-#
-# NB!: Some parameters are on purpose placed in default_parameters.yml to not
-#      prompt on all possible parameters during install with no info to go with it.
-#      (This will change once we move to use Symfony flex)
 parameters:
     # A secret key that's used to generate certain security-related tokens
-    env(SYMFONY_SECRET): ThisEzPlatformTokenIsNotSoSecret_PleaseChangeIt
+    env(SYMFONY_SECRET): ThisEzPlatformTokenIsNotSoSecretChangeIt
 
     # Settings for database backend used by Doctrine DBAL
     # In turn used for default storage engine & default search engine (if legacy is configured as search engine)
     env(DATABASE_DRIVER): pdo_mysql
     env(DATABASE_HOST): localhost
     env(DATABASE_PORT): ~
-    env(DATABASE_NAME): ezplatform
+    env(DATABASE_NAME): ezcommerce
     env(DATABASE_USER): root
     env(DATABASE_PASSWORD):
+    siso_imagemagick_path: /usr/bin/convert
+    siso_core.siteaccess_group: ezdemo_site_clean_group
+    apache_tika_path: bin/tika-app-1.13.jar
+    env(SEARCH_ENGINE): solr
+    env(SOLR_DSN): 'http://localhost:9995/solr'
+    siso_search.solr.host: localhost
+    siso_search.solr.port: 9995
+    siso_search.solr.core: collection1
+    siso_search.solr.path: /solr
