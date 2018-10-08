@@ -261,18 +261,6 @@ twig:
         - 'bootstrap_3_layout.html.twig'
         - 'SilversolutionsEshopBundle:Forms:form_div_layout.html.twig'
 
-ez_search_engine_solr:
-    endpoints:
-        endpoint0:
-            dsn: '%env(SOLR_DSN)%'
-            core: '%env(SOLR_CORE)%'
-    connections:
-        default:
-            entry_endpoints:
-                - endpoint0
-            mapping:
-                default: endpoint0
-
 apache_tika:
     path: '%apache_tika_path%'
 
