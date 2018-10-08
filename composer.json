@@ -106,7 +106,6 @@
             "eZ\\Bundle\\EzPublishCoreBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-            "@php bin/console ezplatform:install ezcommerce_installer",
             "@php bin/console bazinga:js-translation:dump --merge-domains",
             "@php bin/console assetic:dump"
         ],
@@ -120,7 +119,8 @@
             "eZ\\Bundle\\EzPublishCoreBundle\\Composer\\ScriptHandler::installWelcomeText"
         ],
         "ezplatform-install": [
-            "@php bin/console ezplatform:install ezplatform-ee-clean"
+            "@php bin/console ezplatform:install ezplatform-ee-clean",
+            "@php bin/console ezplatform:install ezcommerce_installer"
         ]
     },
     "config": {
