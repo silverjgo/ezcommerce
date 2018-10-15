@@ -253,14 +253,6 @@ parameters:
     siso_price.default.price_service_chain.bestseller_list:
         - siso_price.price_provider.shop
 
-
-twig:
-    debug: '%kernel.debug%'
-    strict_variables: '%kernel.debug%'
-    form_themes:
-        - 'bootstrap_3_layout.html.twig'
-        - 'SilversolutionsEshopBundle:Forms:form_div_layout.html.twig'
-
 apache_tika:
     path: '%apache_tika_path%'
 
@@ -277,20 +269,3 @@ nelmio_solarium:
         default:
             endpoints:
                 - default
-
-ezpublish:
-    imagemagick:
-        enabled: true
-        path: '%siso_imagemagick_path%'
-
-security:
-    firewalls:
-        ezpublish_front:
-            pattern: ^/
-            anonymous: ~
-            ezpublish_rest_session: ~
-            form_login:
-                require_previous_session: false
-            logout:
-                path: logout
-                handlers: [siso_core.logout.listener]
