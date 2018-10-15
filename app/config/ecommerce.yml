@@ -5,7 +5,7 @@ imports:
 jms_payment_core:
     encryption:
         provider: defuse_php_encryption
-        secret: 'def0000033444be8556a1bd7e347a240d19d34a078112f3f18bbb74cb4caeff9f9df7e2f1c86f32826b6b262360791264a0aeb851bdb999f2b882038448966b3b1d40a79'
+        secret: '%env(JMS_PAYMENT_SECRET)%'
         enabled: true
 stash:
     caches:
