@@ -6,20 +6,18 @@ framework:
     router:
         resource: '%kernel.project_dir%/app/config/routing_dev.yml'
         strict_requirements: true
-    #rofiler: 
-        #nly_exceptions: true
-        #ollect: false
+    profiler: { only_exceptions: false }
 
-#web_profiler:
-    #toolbar: true
-    #ntercept_redirects: false
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
 
 monolog:
     handlers:
         main:
             type: '%log_type%'
             path: '%log_path%'
-            level: error
+            level: debug
             channels: ['!event']
         console:
             type: console
