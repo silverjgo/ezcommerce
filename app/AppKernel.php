@@ -89,7 +89,7 @@ class AppKernel extends Kernel
             new Siso\Bundle\OrderHistoryBundle\SisoOrderHistoryBundle(),
 
             // Application
-
+            new AppBundle\AppBundle(),
         ];
 
         switch ($this->getEnvironment()) {
@@ -100,7 +100,7 @@ class AppKernel extends Kernel
             // No break, test also needs dev bundles
             case 'dev':
                 $bundles[] = new eZ\Bundle\EzPublishDebugBundle\EzPublishDebugBundle();
-                //$bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
+                $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
                 $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
                 $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
                 $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
