@@ -120,6 +120,9 @@
         "ezplatform-install": [
             "@php bin/console ezplatform:install ezplatform-ee-clean",
             "@php bin/console ezplatform:install ezcommerce_installer"
+        ],
+        "ezcommerce-install": [
+            "@ezplatform-install"
         ]
     },
     "config": {
