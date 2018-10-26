@@ -20,7 +20,7 @@ ezpublish:
           - site
           - admin
         groups:
-            site_group: [de,en,site]
+            site_group: [de, en, site]
 
             # WARNING: Do not remove or rename this group.
             # It's used to distinguish common siteaccesses from admin ones.
@@ -33,11 +33,9 @@ ezpublish:
     # System settings, grouped by siteaccess and/or siteaccess group
     system:
         de:
-            languages: [ger-DE,eng-GB]
+            languages: [ger-DE, eng-GB]
         en:
-            languages:
-                - eng-GB
-                - eng-US
+            languages: [eng-GB, eng-US]
         site_group:
             session:
                 name: eZCommerce
