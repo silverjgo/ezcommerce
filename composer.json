@@ -12,15 +12,7 @@
     ],
     "repositories": [
         { "type": "composer", "url": "https://updates.ez.no/ttl" },
-        { "type": "composer", "url": "https://updates.ez.no/ttl_com" },
-        {
-            "type": "vcs",
-            "url": "https://github.com/silversolutions/content-loader-bundle.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/silversolutions/XSD-to-PHP.git"
-        }
+        { "type": "composer", "url": "https://updates.ez.no/ttl_com" }
     ],
     "replace": {
         "ezsystems/ezstudio": "*",
@@ -74,7 +66,7 @@
         "symfony/thanks": "^1.0.7",
         "jms/payment-core-bundle": "~1.3",
         "kaliop/ezmigrationbundle": "^4.0",
-        "moyarada/XSD-to-PHP": "dev-develop",
+        "silversolutions/xsd-to-php": "v3.6.0",
         "oneup/flysystem-bundle": "^3.0",
         "php-http/guzzle6-adapter": "^1.1",
         "ramsey/uuid": "^3.5",
