@@ -66,16 +66,16 @@
         "symfony/thanks": "^1.0.7",
         "jms/payment-core-bundle": "~1.3",
         "kaliop/ezmigrationbundle": "^4.0",
-        "silversolutions/xsd-to-php": "v3.6.0",
+        "silversolutions/xsd-to-php": "^3.6",
         "oneup/flysystem-bundle": "^3.0",
         "php-http/guzzle6-adapter": "^1.1",
         "ramsey/uuid": "^3.5",
         "tedivm/stash-bundle": "~0.4",
-        "silversolutions/content-loader-bundle": "v4.0-beta1",
-        "silversolutions/silver.e-shop": "1.4",
-        "silversolutions/silver.content": "1.4",
-        "silversolutions/silver.orderhistory": "1.4",
-        "silversolutions/silver.shoppriceengine": "1.4"
+        "silversolutions/content-loader-bundle": "^4.0@beta",
+        "silversolutions/silver.e-shop": "~1.4.0",
+        "silversolutions/silver.content": "~1.4.0",
+        "silversolutions/silver.orderhistory": "~1.4.0",
+        "silversolutions/silver.shoppriceengine": "~1.4.0"
     },
     "require-dev": {
         "behat/behat": "^3.4.3",
@@ -114,8 +114,12 @@
             "@php bin/console ezplatform:install ezcommerce_installer"
         ],
         "ezcommerce-install": [
+            "@solr-install",
             "@ezplatform-install"
-        ]
+        ],
+        "solr-install": [
+            "bash install-solr.sh"
+        ],
     },
     "config": {
         "bin-dir": "bin",
