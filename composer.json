@@ -114,12 +114,8 @@
             "@php bin/console ezplatform:install ezcommerce_installer"
         ],
         "ezcommerce-install": [
-            "@solr-install",
             "@ezplatform-install"
-        ],
-        "solr-install": [
-            "bash install-solr.sh"
-        ],
+        ]
     },
     "config": {
         "bin-dir": "bin",
@@ -128,6 +124,11 @@
         }
     },
     "extra": {
+        "ez-install-name": "eZ Commerce",
+        "ez-install-command": [
+            "bash install-solr.sh",
+            "composer ezcommerce-install"
+        ],
         "symfony-app-dir": "app",
         "symfony-bin-dir": "bin",
         "symfony-var-dir": "var",
